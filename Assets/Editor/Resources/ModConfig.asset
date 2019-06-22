@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: sevenDeadlySins
+  title: Seven Deadly Sins
+  description: "This is surprisingly fitting for a bomb to be perfectly honest.\n\r\nModule
+    by Blananas2\nImplemented by TheThirdMan\nmoduleID: sevenDeadlySins\n\r\nManual
+    HTML: https://ktane.timwi.de/HTML/Seven%20Deadly%20Sins.html\r\nManual PDF: https://ktane.timwi.de/PDF/Seven%20Deadly%20Sins.pdf\r\n\r\nGitHub
+    Repository: https://github.com/luisdiogo98/ktane-sevenDeadlySins\n\r\nAny problems/suggestions,
+    feel free to contact me on the KTaNE Discord @TheThirdMan. Join the KTaNE Discord
+    here: https://discord.gg/Fv7YEDj\r"
+  version: 1.0
+  outputFolder: build
+  previewImage: {fileID: 2800000, guid: 4eb00a980f7071348a319bb858c3d4f5, type: 3}
