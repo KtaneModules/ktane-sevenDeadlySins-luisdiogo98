@@ -149,11 +149,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114682943674607128, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+    - target: {fileID: 23802569354602210, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
         type: 2}
-      propertyPath: ModuleDisplayName
-      value: Seven Deadly Sins
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
+    - target: {fileID: 23551473311673104, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
+    - target: {fileID: 23453036107270052, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
+    - target: {fileID: 23573102127984648, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
+    - target: {fileID: 23452642933185280, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
+    - target: {fileID: 23634606311439252, guid: 52a5b78c9e78e1f40b89b848dc2909cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1781c1c978d0ae4b84a4027061730ca, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52a5b78c9e78e1f40b89b848dc2909cb, type: 2}
   m_IsPrefabParent: 0
