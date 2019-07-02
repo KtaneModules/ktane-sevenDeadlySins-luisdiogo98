@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +55,7 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 	void Start () 
 	{
+		Debug.LogFormat("Buttons: ", moduleId, btns[0]);
 		CalcPossibleSolution();
 		SetUpButtons();
 	}
@@ -252,4 +253,55 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 		return "";
 	}
+	#region Twitch Plays
+    public string TwitchHelpMessage = "Use '!{0} press 1' to press the top button. The buttons are numbered from 1-7 going clockwise starting from the top left.";
+
+    public IEnumerator ProcessTwitchCommand(string command)
+    {
+        if (command.Equals("press 1", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("1", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[0];
+        }
+        else if (command.Equals("press 2", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("2", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[1];
+        }
+        else if (command.Equals("press 3", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("3", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[2];
+        }
+        else if (command.Equals("press 4", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("4", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[3];
+        }
+		else if (command.Equals("press 5", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("5", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[4];
+        }
+		else if (command.Equals("press 6", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("6", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[5];
+		}
+		else if (command.Equals("press 7", StringComparison.InvariantCultureIgnoreCase) ||
+            command.Equals("7", StringComparison.InvariantCultureIgnoreCase))
+        {
+            yield return null;
+            yield return btns[6];
+        }
+    }
+    #endregion
 }
+
+
