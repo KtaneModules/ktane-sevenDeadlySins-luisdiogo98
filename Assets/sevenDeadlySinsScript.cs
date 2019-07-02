@@ -55,7 +55,6 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 	void Start () 
 	{
-		Debug.LogFormat("Buttons: ", moduleId, btns[0]);
 		CalcPossibleSolution();
 		SetUpButtons();
 	}
