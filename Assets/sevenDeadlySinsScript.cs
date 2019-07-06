@@ -254,7 +254,7 @@ public class sevenDeadlySinsScript : MonoBehaviour
 		return "";
 	}
 	#region Twitch Plays
-    public string TwitchHelpMessage = "Use '!{0} press 1' to press the top button. The buttons are numbered from 1-7 going clockwise starting from the top left.";
+    public string TwitchHelpMessage = "Use '!{0} press 1 2 3 4 5 6 7' to press button 1, 2, 3, 4, 5, 6 and 7. The buttons are numbered from 1 to 7 going clockwise starting from the top left.";
 
     public IEnumerator ProcessTwitchCommand(string command)
     {
