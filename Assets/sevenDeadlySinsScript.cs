@@ -55,6 +55,7 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 	void Start () 
 	{
+		Debug.LogFormat("Buttons: ", moduleId, btns[0]);
 		CalcPossibleSolution();
 		SetUpButtons();
 	}
@@ -257,49 +258,44 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
     public IEnumerator ProcessTwitchCommand(string command)
     {
-        if (command.Equals("press 1", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("1", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[0];
-        }
-        else if (command.Equals("press 2", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("2", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[1];
-        }
-        else if (command.Equals("press 3", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("3", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[2];
-        }
-        else if (command.Equals("press 4", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("4", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[3];
-        }
-		else if (command.Equals("press 5", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("5", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[4];
-        }
-		else if (command.Equals("press 6", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("6", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[5];
+		string commfinal=command.Replace("press ", "");
+		string[] digitstring = commfinal.Split(' ');
+		int tried;
+		int index =1;
+		foreach(string digit in digitstring){
+			if(int.TryParse(digit, out tried)){
+				if(index<=7){
+					tried=int.Parse(digit);
+					index+=1;
+					if(tried<8){
+						if(tried>0){
+					yield return btns[tried-1];
+						}
+						else{
+							yield return null;
+							yield return "sendtochaterror Number too small!";
+							yield break;
+						}
+					}
+					else{
+						yield return null;
+						yield return "sendtochaterror Number too big!";
+						yield break;
+					}
+				}
+				else{
+					yield return null;
+					yield return "sendtochaterror Too many digits!";
+					yield break;
+				}
+			}
+			else{
+				yield return null;
+				yield return "sendtochaterror Digit not valid.";
+				yield break;
+			}
 		}
-		else if (command.Equals("press 7", StringComparison.InvariantCultureIgnoreCase) ||
-            command.Equals("7", StringComparison.InvariantCultureIgnoreCase))
-        {
-            yield return null;
-            yield return btns[6];
-        }
-    }
+	}
     #endregion
 }
 
