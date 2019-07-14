@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using KModkit;
+using rnd = UnityEngine.Random;
 
 public class sevenDeadlySinsScript : MonoBehaviour 
 {
 	public KMBombInfo bomb;
 	public KMAudio Audio;
-
-	static System.Random rnd = new System.Random();
 
 	int[] nodes = {1, 2, 3, 4, 5, 6, 7};
 	int[][] edges = new int[][] { 
@@ -55,7 +54,6 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 	void Start () 
 	{
-		Debug.LogFormat("Buttons: ", moduleId, btns[0]);
 		CalcPossibleSolution();
 		SetUpButtons();
 	}
@@ -72,7 +70,7 @@ public class sevenDeadlySinsScript : MonoBehaviour
 	{
 		btnOrder = new int[7];
 
-		int startPos = rnd.Next() % 7;
+		int startPos = rnd.Range(0, 7);
 		int leftBound = startPos - 1;
 		int rightBound = startPos + 1;
 
@@ -86,7 +84,7 @@ public class sevenDeadlySinsScript : MonoBehaviour
 
 		for(int i = 2; i <= 7; i++)
 		{
-			if(rnd.Next() % 2 == 0)
+			if(rnd.Range(0, 2) == 0)
 			{
 				btnOrder[leftBound] = possibleSolution[i];
 				btns[leftBound].GetComponentInChildren<Renderer>().material = colors[possibleSolution[i] - 1];

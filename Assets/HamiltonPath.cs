@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using rnd = UnityEngine.Random;
 
 class HamiltonPath {
-	static System.Random rnd = new System.Random();
     int[] nodes;
     int[][] edges;
 
@@ -23,7 +23,7 @@ class HamiltonPath {
         int[] solution = new int[nodes.Length + 1];
         Dictionary<int, int[]> candidates = new Dictionary<int, int[]>();
     
-        nodes = nodes.OrderBy(x => rnd.Next()).ToArray();  
+        nodes = nodes.OrderBy(x => rnd.Range(0, 1000)).ToArray();  
         candidates.Add(1, nodes);
         return this.BuildPath(1, solution, candidates);
     }
@@ -50,7 +50,7 @@ class HamiltonPath {
             candidates.Add(k, candList.ToArray());
             solution[k] = firstCandidate;
 
-            int[] neighbors = ((int[]) edges[firstCandidate - 1].Clone()).OrderBy(x => rnd.Next()).ToArray();
+            int[] neighbors = ((int[]) edges[firstCandidate - 1].Clone()).OrderBy(x => rnd.Range(0, 1000)).ToArray();
             int[] prevElems = GetPrevElems(k, solution);
             candidates.Remove(k+1);
             candidates.Add(k+1, GenerateCandidates(neighbors, prevElems));
