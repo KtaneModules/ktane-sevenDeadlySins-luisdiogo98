@@ -267,6 +267,8 @@ public class sevenDeadlySinsScript : MonoBehaviour
 					index+=1;
 					if(tried<8){
 						if(tried>0){
+					yield return null;
+					yield return btns[tried-1];
 					yield return btns[tried-1];
 						}
 						else{
